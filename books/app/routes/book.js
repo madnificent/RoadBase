@@ -1,7 +1,7 @@
-import Route from "@ember/routing/route";
+import Route from '@ember/routing/route';
 
 export default class BooksRoute extends Route {
   model() {
-    return this.store.findAll("book");
+    return this.store.findAll('book');
   }
 }
