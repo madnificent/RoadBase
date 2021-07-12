@@ -1,0 +1,16 @@
+<ul>
+  {{#each this.model as |home|}}
+    <li>{{home.address}} <button type="button" {{on "click" (fn this.destroyHome home)}}>Delete</button></li>
+  {{/each}}
+</ul>
+
+<form {{on "submit" this.submitCreateHome}}>
+  <label>Adress
+    <!-- Note capital I in Input -->
+    <Input @value={{this.address}} placeholder="magicstreet" />
+  </label>
+
+  <button type="submit">Create!</button>
+</form>
+
+{{outlet}}
