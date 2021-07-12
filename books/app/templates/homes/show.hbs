@@ -1,0 +1,19 @@
+{{page-title "Show"}}
+
+<h1>{{model.address}}</h1>
+<ul>
+  {{#each @model.inhabitants as |inhabitant|}}
+    <li>{{inhabitant.name}} <button {{on "click" (fn this.removeInhabitant inhabitant)}}>Remove</button></li>
+  {{/each}}
+</ul>
+
+<form {{on "submit" this.addInhabitant}}>
+  <label>
+    name
+    <Input @value={{this.name}} @placeholder="John Doe" />
+  </label>
+
+  <button type="submit">Add inhabitant</button>
+</form>
+
+{{outlet}}

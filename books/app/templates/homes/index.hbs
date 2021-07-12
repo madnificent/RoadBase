@@ -1,6 +1,9 @@
 <ul>
   {{#each this.model as |home|}}
-    <li>{{home.address}} <button type="button" {{on "click" (fn this.destroyHome home)}}>Delete</button></li>
+    <li>
+      <LinkTo @route="homes.show" @model={{home.id}}>{{home.address}}</LinkTo>
+      <button type="button" {{on "click" (fn this.destroyHome home)}}>Delete</button>
+    </li>
   {{/each}}
 </ul>
 
