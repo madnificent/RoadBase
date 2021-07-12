@@ -29,11 +29,11 @@ defmodule Dispatcher do
   end
 
   match "/homes/*path" do
-    Proxy.forward conn, path, "http://homes/homes/"
+    Proxy.forward conn, path, "http://resource/homes/"
   end
 
   match "/inhabitants/*path" do
-    Proxy.forward conn, path, "http://homes/inhabitants/"
+    Proxy.forward conn, path, "http://resource/inhabitants/"
   end
 
   match "_", %{ last_call: true } do

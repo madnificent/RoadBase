@@ -13,7 +13,6 @@ services:
     links:
       - resource:resource
       - books:books
-      - homes:homes
     volumes:
       - ./config/dispatcher:/config
 
@@ -30,11 +29,6 @@ services:
 
   books:
     image: madnificent/books-service:2.0.0
-    links:
-      - db:database
-
-  homes:
-    build: ./homes/
     links:
       - db:database
 
